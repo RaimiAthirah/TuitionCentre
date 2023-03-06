@@ -6,53 +6,38 @@ public class Name {
     private String lname;
 
     //methods
-
     //constructor = no return, name same as the class
     public Name (String fname, String mname, String lname) {
-
         this.fname = fname;
         this.mname = mname;
         this.lname = lname;
-
     }
-
     public Name () {
-
         this.fname = fname;
         this.mname = mname;
         this.lname = lname;
     }
 
     public String getFName () {
-
         return fname;
     }
 
     public String getMName () {
-
         return mname;
     }
-
     public String getLName () {
-
         return lname;
     }
 
     public void setFirstName (String fname) {
-
-        this.fname = fname; //"this" refers to class attributes
-        //local = global
+        this.fname = fname;
     }
 
     public void setMidName (String mname) {
-
-        this.mname = mname; //"this" refers to class attributes
-        //local = global
+        this.mname = mname;
     }
 
     public void setLastName (String lname) {
-
-        this.lname = lname; //"this" refers to class attributes
-        //local = global
+        this.lname = lname;
     }
 }

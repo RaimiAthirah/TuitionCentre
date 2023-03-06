@@ -51,10 +51,8 @@ public class Teacher {
 
         if (yearExp >= 5)
             qualify = "Qualified";
-
         else
             qualify = "Not qualified";
-
         return qualify;
     }
 

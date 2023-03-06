@@ -20,37 +20,11 @@ import java.util.Scanner;
 
 public class Main
 {
-
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
         float average = 0;
-        String assignedTeacher;
-
-        //Mike
-        Student mike = new Student();
-        Name michael = new Name();
-        michael.setFirstName("Michael ");
-        michael.setMidName("Learns To ");
-        michael.setLastName("Rock");
-        mike.setName(michael);
-        mike.setIC("071230558888");
-        mike.setAddr("Bukit Melati, Damansara");
-        mike.setSchoolName("SMJK Tiong Hua");
-
-        //set marks for michael
-        try {
-            mike.setMarks(97, 0);
-            mike.setMarks(87, 1);
-            mike.setMarks(85, 2);
-            mike.setMarks(32, 3);
-            mike.setMarks(69, 4);
-
-        } catch (Exception ex) {
-
-            System.out.println("Error! Cannot continue..");
-            ex.printStackTrace();
-        }
+        //String assignedTeacher;
 
         //Adila
         Student adila = new Student();
@@ -61,7 +35,7 @@ public class Main
         adila.setName(abi);
         adila.setIC("070424663545");
         adila.setAddr("Taman Permata, Ampang");
-        adila.setSchoolName("SMK St Cecilia");
+        adila.setSchoolName("SMK Taman Permata");
 
         //set marks for adila
         try {
@@ -70,10 +44,8 @@ public class Main
             adila.setMarks(55, 2);
             adila.setMarks(68, 3);
             adila.setMarks(77, 4);
-
         } catch (Exception ex) {
-
-            System.out.println("Error! Cannot continue..");
+            System.out.println("Error found !");
             ex.printStackTrace();
         }
 
@@ -83,7 +55,7 @@ public class Main
         imran.setName(sis);
         imran.setIC("070630147658");
         imran.setAddr("Dataran Sungai Lipur, Selangor");
-        imran.setSchoolName("SMK Taman Mawar");
+        imran.setSchoolName("SMK Sungai Lipur");
 
         //set marks for syed imran
         try {
@@ -92,18 +64,33 @@ public class Main
             imran.setMarks(65, 2);
             imran.setMarks(23, 3);
             imran.setMarks(17, 4);
-
-        } catch (Exception ex) {  // catch block.. action to be taken in case of Exception
-
+        } catch (Exception ex) {
             System.out.println("Error found !");
             ex.printStackTrace();
         }
 
-        //creating StudentBatch object
-        StudentBatch sb2023 = new StudentBatch();
-        sb2023.add(mike, 0);
-        sb2023.add(adila, 1);
-        sb2023.add(imran, 2);
+        //Mike
+        Student mike = new Student();
+        Name michael = new Name();
+        michael.setFirstName("Michael ");
+        michael.setMidName("Learns To ");
+        michael.setLastName("Rock");
+        mike.setName(michael);
+        mike.setIC("071230558888");
+        mike.setAddr("Bukit Melati, Damansara");
+        mike.setSchoolName("SMJK Cheong Hui");
+
+        //set marks for michael
+        try {
+            mike.setMarks(97, 0);
+            mike.setMarks(87, 1);
+            mike.setMarks(85, 2);
+            mike.setMarks(32, 3);
+            mike.setMarks(69, 4);
+        } catch (Exception ex) {
+            System.out.println("Error found !");
+            ex.printStackTrace();
+        }
 
         //Mr Hasan
         Teacher hasan = new Teacher();
@@ -114,7 +101,7 @@ public class Main
         hasan.setName(hsn);
         hasan.setIC("871226475634");
         hasan.setAddr("Taman Perdana, Selangor");
-        hasan.setYearExp(10);
+        hasan.setYearExp(9);
 
         //Mr Gopal
         Teacher gopal = new Teacher();
@@ -125,7 +112,7 @@ public class Main
         gopal.setName(gpl);
         gopal.setIC("830416348567");
         gopal.setAddr("Bukit Mewah, Bangi");
-        gopal.setYearExp(12);
+        gopal.setYearExp(10);
 
         //Mr Li
         Teacher li = new Teacher();
@@ -133,7 +120,7 @@ public class Main
         li.setName(lee);
         li.setIC("850719234857");
         li.setAddr("Taman Seri Bunga, Puchong ");
-        li.setYearExp(6);
+        li.setYearExp(7);
 
         //Cikgu Minah
         Teacher minah = new Teacher();
@@ -141,7 +128,7 @@ public class Main
         minah.setName(min);
         minah.setIC("800328439476");
         minah.setAddr("Taman Jaya, Kuala Lumpur");
-        minah.setYearExp(8);
+        minah.setYearExp(11);
 
         //Mr Raju
         Teacher raju = new Teacher();
@@ -149,52 +136,28 @@ public class Main
         raju.setName(raj);
         raju.setIC("780924244958");
         raju.setAddr("Kampung Kijang, Gombak");
-        raju.setYearExp(5);
+        raju.setYearExp(8);
 
 
-        //OUTPUT (user input student by number)
+        //tp print output (user input student by number)
         System.out.print("\n------  WELCOME TO PANDAI TUITION CENTRE  ------");
-        System.out.println("\n\n\tName of students registered :\n\t1) Michael\n\t2) Adila\n\t3) Imran");
-        System.out.print("\nEnter a student to check for their information (number only) : ");
+        System.out.println("\n\n\tName of students registered :\n\t1) Adila\n\t2) Syed\n\t3) Michael");
+        System.out.println("\nBased on list above,enter the number of student name to check for their informations.");
+        System.out.print("Please enter number only : ");
         int check = input.nextInt();
         input.nextLine();
 
-
         // switch case for students informations
         switch (check) {
-
             case 1:
-
-                //1) Michael
-                System.out.println("\n======= Student Informations =======");
-                System.out.println("\tName: " + michael.getFName() + michael.getMName() + michael.getLName());
-                System.out.println("\tIC: " + mike.getIC());
-                System.out.println("\tAddress: " + mike.getAddr());
-                System.out.println("\tSchool Name: " + mike.getSchoolName());
-
-                //print marks
-                System.out.println("\n==== Marks for Trial Tests ====");
-                for (int i = 0; i < mike.marks.length; i++) {
-                    int j = 0;
-                    j = j + i + 1;
-                    System.out.println("\tMark #" + j + ": " + mike.getMark(i));
-                }
-
-                // calculate and print the average and min marks
-                average = mike.calcAvg();
-                System.out.println("\n\tAverage marks = " + average);
-                System.out.println("\tMinimum marks = " + mike.findMin());
-                break;
-
-            case 2:
-                //2) Adila
+                //1) Adila
                 System.out.println("\n======= Student Informations =======");
                 System.out.println("\tName: " + abi.getFName() + abi.getMName() + abi.getLName());
-                System.out.println("\tIC: " + adila.getIC());
+                System.out.println("\tIC Number: " + adila.getIC());
                 System.out.println("\tAddress: " + adila.getAddr());
                 System.out.println("\tSchool Name: " + adila.getSchoolName());
 
-                //print marks
+                //print the marks
                 System.out.println("\n==== Marks for Trial Tests ====");
                 for (int i = 0; i < adila.marks.length; i++) {
                     int j = 0;
@@ -208,15 +171,15 @@ public class Main
                 System.out.println("\tMinimum marks = " + adila.findMin());
                 break;
 
-            case 3:
-                //3) Syed Imran
+            case 2:
+                //2) Syed Imran
                 System.out.println("\n======= Student Informations =======");
                 System.out.println("\tName: " + sis.getFName() + sis.getMName() + sis.getLName());
-                System.out.println("\tIC: " + imran.getIC());
+                System.out.println("\tIC Number: " + imran.getIC());
                 System.out.println("\tAddress: " + imran.getAddr());
                 System.out.println("\tSchool Name: " + imran.getSchoolName());
 
-                //print marks
+                //print the marks
                 System.out.println("\n==== Marks for Trial Tests ====");
                 for (int i = 0; i < imran.marks.length; i++) {
                     int j = 0;
@@ -230,9 +193,31 @@ public class Main
                 System.out.println("\tMinimum marks = " + imran.findMin());
                 break;
 
+            case 3:
+                //3) Michael
+                System.out.println("\n======= Student Informations =======");
+                System.out.println("\tName: " + michael.getFName() + michael.getMName() + michael.getLName());
+                System.out.println("\tIC Number: " + mike.getIC());
+                System.out.println("\tAddress: " + mike.getAddr());
+                System.out.println("\tSchool Name: " + mike.getSchoolName());
+
+                //print the marks
+                System.out.println("\n==== Marks for Trial Tests ====");
+                for (int i = 0; i < mike.marks.length; i++) {
+                    int j = 0;
+                    j = j + i + 1;
+                    System.out.println("\tMark #" + j + ": " + mike.getMark(i));
+                }
+
+                // calculate and print the average and min marks
+                average = mike.calcAvg();
+                System.out.println("\n\tAverage marks = " + average);
+                System.out.println("\tMinimum marks = " + mike.findMin());
+                break;
+
             default:
                 //if user input other numbers
-                System.out.println("\nInvalid number ! Please enter the number listed.");
+                System.out.println("\nInvalid number ! Please enter the number listed only.");
                 return;
         }
 
@@ -240,7 +225,7 @@ public class Main
             //Mr Hassan
             System.out.println("\n=========== Assigned Teacher ===========");
             System.out.println("\tTeacher's name: " + hsn.getFName() + hsn.getMName() + hsn.getLName());
-            System.out.println("\tIC : " + hasan.getIC());
+            System.out.println("\tIC Number: " + hasan.getIC());
             System.out.println("\tAddress: " + hasan.getAddr());
             System.out.println("\tYears of Experience: " + hasan.getYearExp());
             System.out.println("\tQualification: " + hasan.isQualified());
@@ -250,7 +235,7 @@ public class Main
             //Mr Gopal
             System.out.println("\n=========== Assigned Teacher ===========");
             System.out.println("\tTeacher's name: " + gpl.getFName() + gpl.getMName() + gpl.getLName());
-            System.out.println("\tIC: " + gopal.getIC());
+            System.out.println("\tIC Number: " + gopal.getIC());
             System.out.println("\tAddress: " + gopal.getAddr());
             System.out.println("\tYears of Experience: " + gopal.getYearExp());
             System.out.println("\tQualification: " + gopal.isQualified());
@@ -260,7 +245,7 @@ public class Main
             //Mr Li
             System.out.println("\n=========== Assigned Teacher ===========");
             System.out.println("\tTeacher's name: " + lee.getFName() + lee.getMName() + lee.getLName());
-            System.out.println("\tIC: " + li.getIC());
+            System.out.println("\tIC Number: " + li.getIC());
             System.out.println("\tAddress: " + li.getAddr());
             System.out.println("\tYears of Experience: " + li.getYearExp());
             System.out.println("\tQualification: " + li.isQualified());
@@ -270,7 +255,7 @@ public class Main
             //Cikgu Minah
             System.out.println("\n=========== Assigned Teacher ===========");
             System.out.println("\tTeacher's name: " + min.getFName() + min.getMName() + min.getLName());
-            System.out.println("\tIC: " + minah.getIC());
+            System.out.println("\tIC Number: " + minah.getIC());
             System.out.println("\tAddress: " + minah.getAddr());
             System.out.println("\tYears of Experience: " + minah.getYearExp());
             System.out.println("\tQualification: " + minah.isQualified());
@@ -280,7 +265,7 @@ public class Main
             //Mr Raju
             System.out.println("\n=========== Assigned Teacher ===========");
             System.out.println("\tTeacher's name: " + raj.getFName() + raj.getMName() + raj.getLName());
-            System.out.println("\tIC: " + raju.getIC());
+            System.out.println("\tIC Number: " + raju.getIC());
             System.out.println("\tAddress: " + raju.getAddr());
             System.out.println("\tYears of Experience: " + raju.getYearExp());
             System.out.println("\tQualification: " + raju.isQualified());

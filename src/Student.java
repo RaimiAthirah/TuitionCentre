@@ -66,7 +66,7 @@ public class Student {
         }
     }
 
-    public float calcAvg() { // no need parameters, as marks is already accessible
+    public float calcAvg() {
 
         float sum = 0;
 

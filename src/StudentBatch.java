@@ -3,7 +3,7 @@ public class StudentBatch {
     //StudentBatch is a list of students registered in a StudentBatch
     //"list of students" is an array of Student
 
-    //data section
+    //data
     private Student stud[] = new Student[10];
     private int currsz = 0; // current size
 
@@ -27,14 +27,14 @@ public class StudentBatch {
     }
 
     // find a particular student
-    boolean find(String name) {
-        // loop thru the array students
-        // for each student in students
-        //    check whether name is the same as that in student
+    /*boolean find(String name) {
+        //loop thru the array students
+        //for each student in students
+        //check whether name is the same as that in student
         for (int i = 0; i < currsz; i++) {
             if (stud[i].name.equals(name))
                 return true;
         }
         return false;
-    }
+    }*/
 }
