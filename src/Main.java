@@ -270,7 +270,9 @@ public class Main
             System.out.println("\tYears of Experience: " + raju.getYearExp());
             System.out.println("\tQualification: " + raju.isQualified());
         }
-
+        Database db = new Database ("db4free.net" , "3306" , "nordin" , "nrdinutp");
+        db.connect();
+        db.runQuery("select * from Student");
     }
 
 }
